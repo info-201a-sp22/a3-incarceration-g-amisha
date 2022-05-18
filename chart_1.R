@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 library("tidyverse")
 
 # Chart 1- Trends over time
@@ -21,3 +22,6 @@ ggplot(grouped_jail_data, mapping = aes(x = year, y = people, color = Race)) +
   scale_x_continuous(breaks = round(seq(1985, 2018, by = 1))) +
   scale_y_continuous(breaks = seq(0, 350000, 15000)) +
   theme(axis.text.x = element_text(angle = 90))
+=======
+
+>>>>>>> 7340aa14ff1d6c87f01c013d9fc6847c197646ab
