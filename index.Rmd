@@ -56,7 +56,7 @@ The second chart that you will create and include will show how two different (c
 
 This map portrays the number of incarcerations in the United States in 2018 by state. The year 2018 was specifically picked to determine the current number of incarcerations in the United States. Based on the map below, it seems like the number of people incarcerated is the highest in California, followed by Texas, Florida, New York, and Philadelphia. This is consistent with the population distribution of the United States in these states. The top 5 populous states (in descending order) are California, Texas, Florida, New York, and Philadelphia. So we can conclude that, there is no particular state that has a higher rate of incarcerations. In other words, California has the highest number of incarcerations because it is the most populous state in the country.
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("map.R"), fig.width = 10, fig.height = 5}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("map_example.R"), fig.width = 10, fig.height = 5}
 ```
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
