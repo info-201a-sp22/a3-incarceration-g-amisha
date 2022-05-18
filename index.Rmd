@@ -2,10 +2,12 @@
 title: "A3: Incarceration"
 output: html_document
 ---
-
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE}
+source("summary.R")
+```
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+I analyzed data on incarcerations in the United States from 1970 to 2018 provided by Vera Institute. I laid a special emphasis on the rate of incarcerations of particular race, state, or region based on population and not just the number of people of incarcerated from a particular race, state, or region. This was done to understand the real picture of the growing number of incarcerations in the United States and spot possible biases or trends based on comparative analysis.
 
 ### Summary Information
 
@@ -21,35 +23,26 @@ Feel free to calculate and report values that you find relevant. Again, remember
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
-
+**1. Who collected the data?** <p> The data was collected by Vera Institute. <p>
+**2. How was the data collected or generated?** <p> Based on their GitHub repository researchers at Vera Institute collected the data from the BJS Census of Jails, DRCP, and Annual Survey of Jails. <p>
+**3. Why was the data collected?** <p> According to their website, Vera Institute created this data set so that they could help understand, explain, and disrupt the criminal legal and immigration systems and their devastating impacts.<p>
+**4. How many observations (rows) are in your data?** <p> There are `r summary_info$number_rows` observations in the data.<p>
+**5. How many features (columns) are in the data?** <p>
+**6. What, if any, ethical questions or questions of power do you need to consider when working with this data?** <p> Some ethical questions I would consider are: How do they define race? Is it self-reported by the prisoners? Or is it based on skin color? What about people who are bi-racial or multiracial? <p>
+**7. What are possible limitations or problems with this data?** <p> 
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+This chart helps the reader understand the number of black and white inmates from 1958 to 2018. As we can see, the number of black inmates was mostly less than the number of white inmates, however this is may be misleading. The population of black people in the United States has always been far smaller than that of white people. For example, according to [United States Census Bureau ](https://www.census.gov/newsroom/releases/archives/2010_census/cb11-cn125.html#:~:text=This%20group%20totaled%20299.7%20million,percent%20of%20the%20total%20population.), in 2010, 72% of all people living in the United States is were White (223.6 million) while only 13% were Black (38.9 million). According to our data analysis, the difference between the number of White and Black inmates in 2010 was only 47,000 people or 14%. Therefore, we can say that a higher proportion of the total black population was incarcerated than was the white population.
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_1.R"), fig.width = 10, fig.height = 5}
 ```
 
+
 ### Variable Comparison Chart
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_2.R"), fig.width = 10, fig.height = 5}
+```
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
@@ -61,6 +54,10 @@ The second chart that you will create and include will show how two different (c
 
 ### Map
 
+This map portrays the number of incarcerations in the United States in 2018 by state. The year 2018 was specifically picked to determine the current number of incarcerations in the United States. Based on the map below, it seems like the number of people incarcerated is the highest in California, followed by Texas, Florida, New York, and Philadelphia. This is consistent with the population distribution of the United States in these states. The top 5 populous states (in descending order) are California, Texas, Florida, New York, and Philadelphia. So we can conclude that, there is no particular state that has a higher rate of incarcerations. In other words, California has the highest number of incarcerations because it is the most populous state in the country.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("map.R"), fig.width = 10, fig.height = 5}
+```
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
 The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
