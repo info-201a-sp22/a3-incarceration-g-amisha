@@ -28,3 +28,6 @@ summary_info$highest_decrease <- pct_black %>% filter(Change == min(na.omit(Chan
 
 # Find total number of incarcerations
 summary_info$total_incarcerations <- label_comma() (sum(state_data$Inmates))
+
+# Find county that had highest number of incarcerations
+summary_info$county_highest <- jail_data %>% filter(year == max(year)) %>% filter(total_pop == max(total_pop)) %>% pull(county_name)

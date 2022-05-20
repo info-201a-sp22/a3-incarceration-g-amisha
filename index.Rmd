@@ -7,11 +7,11 @@ source("summary.R")
 ```
 ### Introduction
 
-I analyzed data on incarcerations in the United States from 1970 to 2018 provided by Vera Institute. I laid a special emphasis on the rate of incarcerations of particular race, state, or region based on population and not just the number of people of incarcerated from a particular race, state, or region. This comparative analysis was done to understand the real picture of the growing number of incarcerations in the United States and spot possible biases or trends.
+I analyzed data on incarcerations in the United States from 1958 to 2018 provided by Vera Institute. I laid a special emphasis on the rate of incarcerations of particular race, state, or region based on population and not just the number of people of incarcerated from a particular race, state, or region. This comparative analysis was done to understand the real picture of the growing number of incarcerations in the United States and spot possible biases or trends.
 
 ### Summary Information
 
-As of 2018, there have been `r summary_info$total_incarcerations`. This number may include repeat offenders. `r summary_info$state_highest` has the highest number of incarcerations as of 2018. As for Black incarcerations, the highest increase was in `r summary_info$highest_increase` while biggest fall occurred the year `r summary_info$highest_decrease`. 
+As of 2018, there have been `r summary_info$total_incarcerations`. This number may include repeat offenders. `r summary_info$county_highest` in `r summary_info$state_highest` has the highest number of incarcerations as of 2018. As for Black incarcerations, the highest increase was in `r summary_info$highest_increase` while biggest fall occurred the year `r summary_info$highest_decrease`. 
 
 ### The Dataset
 
@@ -19,7 +19,7 @@ As of 2018, there have been `r summary_info$total_incarcerations`. This number m
 **2. How was the data collected or generated?** <br> Based on their GitHub repository researchers at Vera Institute collected the data from the BJS Census of Jails, DRCP, and Annual Survey of Jails. <p>
 **3. Why was the data collected?** <br> According to their website, Vera Institute created this data set so that they could help understand, explain, and disrupt the criminal legal and immigration systems and their devastating impacts.<p>
 **4. How many observations (rows) are in your data?** <br> There are `r summary_info$number_rows` observations in the data.<p>
-**5. How many features (columns) are in the data?** <br> There are `r summary_info$number_rows` features in the data.
+**5. How many features (columns) are in the data?** <br> There are `r summary_info$number_columns` features in the data. <p>
 **6. What, if any, ethical questions or questions of power do you need to consider when working with this data?** <br> Some ethical questions I would consider are: How do they define race? Is it self-reported by the prisoners? Or is it based on skin color? What about people who are bi-racial or multiracial? <p>
 **7. What are possible limitations or problems with this data?** <br> A problem with this data is that some values for the number of people incarcerated are in decimals. 
 
