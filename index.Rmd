@@ -7,62 +7,39 @@ source("summary.R")
 ```
 ### Introduction
 
-I analyzed data on incarcerations in the United States from 1970 to 2018 provided by Vera Institute. I laid a special emphasis on the rate of incarcerations of particular race, state, or region based on population and not just the number of people of incarcerated from a particular race, state, or region. This was done to understand the real picture of the growing number of incarcerations in the United States and spot possible biases or trends based on comparative analysis.
+I analyzed data on incarcerations in the United States from 1970 to 2018 provided by Vera Institute. I laid a special emphasis on the rate of incarcerations of particular race, state, or region based on population and not just the number of people of incarcerated from a particular race, state, or region. This comparative analysis was done to understand the real picture of the growing number of incarcerations in the United States and spot possible biases or trends.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+As of 2018, there have been `r summary_info$total_incarcerations`. This number may include repeat offenders. `r summary_info$state_highest` has the highest number of incarcerations as of 2018. As for Black incarcerations, the highest increase was in `r summary_info$highest_increase` while biggest fall occurred the year `r summary_info$highest_decrease`. 
 
 ### The Dataset
 
-**1. Who collected the data?** <p> The data was collected by Vera Institute. <p>
-**2. How was the data collected or generated?** <p> Based on their GitHub repository researchers at Vera Institute collected the data from the BJS Census of Jails, DRCP, and Annual Survey of Jails. <p>
-**3. Why was the data collected?** <p> According to their website, Vera Institute created this data set so that they could help understand, explain, and disrupt the criminal legal and immigration systems and their devastating impacts.<p>
-**4. How many observations (rows) are in your data?** <p> There are `r summary_info$number_rows` observations in the data.<p>
-**5. How many features (columns) are in the data?** <p>
-**6. What, if any, ethical questions or questions of power do you need to consider when working with this data?** <p> Some ethical questions I would consider are: How do they define race? Is it self-reported by the prisoners? Or is it based on skin color? What about people who are bi-racial or multiracial? <p>
-**7. What are possible limitations or problems with this data?** <p> 
+**1. Who collected the data?** <br> The data was collected by Vera Institute. <p>
+**2. How was the data collected or generated?** <br> Based on their GitHub repository researchers at Vera Institute collected the data from the BJS Census of Jails, DRCP, and Annual Survey of Jails. <p>
+**3. Why was the data collected?** <br> According to their website, Vera Institute created this data set so that they could help understand, explain, and disrupt the criminal legal and immigration systems and their devastating impacts.<p>
+**4. How many observations (rows) are in your data?** <br> There are `r summary_info$number_rows` observations in the data.<p>
+**5. How many features (columns) are in the data?** <br> There are `r summary_info$number_rows` features in the data.
+**6. What, if any, ethical questions or questions of power do you need to consider when working with this data?** <br> Some ethical questions I would consider are: How do they define race? Is it self-reported by the prisoners? Or is it based on skin color? What about people who are bi-racial or multiracial? <p>
+**7. What are possible limitations or problems with this data?** <br> A problem with this data is that some values for the number of people incarcerated are in decimals. 
 
-### Trends Over Time Chart
+### Trends Over Time Chart: Black vs. White Incarcerations over time
 
-This chart helps the reader understand the number of black and white inmates from 1958 to 2018. As we can see, the number of black inmates was mostly less than the number of white inmates, however this is may be misleading. The population of black people in the United States has always been far smaller than that of white people. For example, according to [United States Census Bureau ](https://www.census.gov/newsroom/releases/archives/2010_census/cb11-cn125.html#:~:text=This%20group%20totaled%20299.7%20million,percent%20of%20the%20total%20population.), in 2010, 72% of all people living in the United States is were White (223.6 million) while only 13% were Black (38.9 million). According to our data analysis, the difference between the number of White and Black inmates in 2010 was only 47,000 people or 14%. Therefore, we can say that a higher proportion of the total black population was incarcerated than was the white population.
+This chart helps the reader understand the number of black and white inmates from 1958 to 2018. As we can see, the number of black inmates was mostly less than the number of white inmates, however this is may be misleading. The population of black people in the United States has always been far smaller than that of white people. For example, according to [United States Census Bureau ](https://www.census.gov/newsroom/releases/archives/2010_census/cb11-cn125.html#:~:text=This%20group%20totaled%20299.7%20million,percent%20of%20the%20total%20population.), in 2010, 72% of all people living in the United States is were White (223.6 million) while only 13% were Black (38.9 million). According to my data analysis, the difference between the number of White and Black inmates in 2010 was only 47,000 people or 14%. Therefore, we can conclude that a higher proportion of the total black population was incarcerated than was the white population.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_1.R"), fig.width = 10, fig.height = 5}
 ```
 
+### Variable Comparison Chart: Change in Black Incarcerations over time
 
-### Variable Comparison Chart
+This chart helps us focus on the change in the number of incarcerations of Black people. As we can see, the percent of Black incarcerations started to decline in 2008-2009. A similar trend can be observed in the chart above. During my analysis, I was curious as to what exactly caused the decline. Any guesses? In 2008, Barack Obama was elected as the 44th President of the United States. Mr. Obama's election could be one of the biggest drivers behind Black incarcerations falling.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("chart_2.R"), fig.width = 10, fig.height = 5}
 ```
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
-
-### Map
+### Map: Incarcerations in the U.S. in 2018 by state
 
 This map portrays the number of incarcerations in the United States in 2018 by state. The year 2018 was specifically picked to determine the current number of incarcerations in the United States. Based on the map below, it seems like the number of people incarcerated is the highest in California, followed by Texas, Florida, New York, and Philadelphia. This is consistent with the population distribution of the United States in these states. The top 5 populous states (in descending order) are California, Texas, Florida, New York, and Philadelphia. So we can conclude that, there is no particular state that has a higher rate of incarcerations. In other words, California has the highest number of incarcerations because it is the most populous state in the country.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, message = FALSE, code = readLines("map_example.R"), fig.width = 10, fig.height = 5}
 ```
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
-
